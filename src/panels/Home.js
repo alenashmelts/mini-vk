@@ -1,4 +1,4 @@
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, Link } from '@vkontakte/vkui';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import PropTypes from 'prop-types';
 
@@ -8,7 +8,7 @@ export const Home = ({ id, fetchedUser }) => {
 
   return (
     <Panel id={id}>
-      <PanelHeader>Главная</PanelHeader>
+      <PanelHeader>Моя главная</PanelHeader>
       {fetchedUser && (
         <Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
           <Cell before={photo_200 && <Avatar src={photo_200} />} subtitle={city?.title}>
@@ -22,6 +22,7 @@ export const Home = ({ id, fetchedUser }) => {
           <Button stretched size="l" mode="secondary" onClick={() => routeNavigator.push('persik')}>
             Покажите Персика, пожалуйста!
           </Button>
+          <Link onClick={() => routeNavigator.push('newpanel')}>Новая панель</Link>
         </Div>
       </Group>
     </Panel>
