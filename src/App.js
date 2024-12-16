@@ -40,16 +40,16 @@ export const App = () => {
 
   return (
     <SplitLayout popout={popout}>
-      <SplitCol  autoSpaced >
+      <SplitCol autoSpaced >
         <View activePanel={activePanel}>
           <Home id="home" fetchedUser={fetchedUser} />
           <Persik id="persik" />
-          <NewPanel id='newpanel'/>
+          <NewPanel id='newpanel' />
         </View>
       </SplitCol>
       <SplitCol width={280} maxWidth={280} className={viewWidth.tabletPlus.className}>
         <Group>
-        <List>
+          <List>
             {draggingList.map((item) => (
               <Cell key={item} before={<Avatar />} draggable onDragFinish={onDragFinish}>
                 {item}
